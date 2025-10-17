@@ -1,12 +1,13 @@
 // Database Simulation
-let taskDB = [];
+let taskDb = [];
 
 // Add Functionality
 function addTask() {
      // Create Task Object
-     const taskInput = document.getElementbyId('todo-input');
+     const taskInput = document.getElementById('todo-input');
      const taskDate = document.getElementById('todo-date');
      
+     // Validation Input
      if (ValidateInput(taskInput.value, taskDate.value)) {
           const newTask = {
                task: taskInput.value,
@@ -24,12 +25,12 @@ function addTask() {
 // Render Functionality
 function renderTasks() {
      // Clear Existing List
-     const tasklist = document.getElementbyId('task-list');
+     const taskList = document.getElementById('task-list');
      taskList.innerHTML = '';
 
-     // Check if taskDb is empty
-     taskDb.foreach((taskObj, index) => {
-          taskList.innerHTML += `<li>${taskObj.date} <button onclick="deleteTask(${index})">Delete</button></li>`
+     // Render Each Task
+     taskDb.forEach((taskObj, index) => {
+          taskList.innerHTML += `<li>${taskObj.task} - ${taskObj.date}</li>`;
      });
 }
 
@@ -43,7 +44,7 @@ function deleteAllTasks() {
 }
 
 // Filter Functionality (placeholder)
-function filterTasks() {}
+function filterTasks(){}
 
 // Input Validation
 function ValidateInput(task, date) {
