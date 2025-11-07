@@ -2,4 +2,11 @@ body {
      justify-items: center;
      height: 100vh;
      align-content: center;
+     background-color: lightskyblue;
+}
+
+section {
+     justify-items: center;
+     align-content: center;
+     background-color: aqua;
 }
